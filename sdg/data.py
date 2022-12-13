@@ -56,7 +56,7 @@ def write_csv(inid, df, ftype='data', site_dir=''):
     out_path = output_path(inid,  ftype=ftype, format='csv', site_dir=site_dir)
 
     try:
-        df.to_csv(out_path, index=False)
+        df.to_csv(out_path, index=False, encoding='utf-8-sig')
     except Exception as e:
         print(inid, e)
         return False
