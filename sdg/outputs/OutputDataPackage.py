@@ -137,7 +137,7 @@ class OutputDataPackage(OutputBase):
 
 
     def write_data(self, df, path):
-        df.to_csv(path, index=False)
+        df.to_csv(path, index=False, encoding='utf-8-sig')
 
 
     def apply_package_properties(self, package, indicator):
