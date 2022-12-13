@@ -347,7 +347,7 @@ class OutputDocumentationService(Loggable):
     def get_csv_download(self, df, filename, label='Download CSV'):
         csv_path = os.path.join(self.folder, filename)
         df = self.disaggregation_report_service.remove_links_from_dataframe(df)
-        df.to_csv(csv_path, index=False)
+        df.to_csv(csv_path, index=False, encoding='utf-8-sig')
         filesize = self.get_csv_filesize(csv_path)
         fileid = filename.split('.')[0]
         return self.get_download_button_template().format(
