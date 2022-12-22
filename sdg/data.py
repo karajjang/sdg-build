@@ -11,7 +11,8 @@ from sdg.path import output_path, input_path
 
 def get_inid_data(inid, src_dir=''):
     pth = input_path(inid, ftype='data', src_dir=src_dir, must_work=True)
-    df = pd.read_csv(pth)
+    # df = pd.read_csv(pth)
+    df = pd.read_csv(pth, encoding = 'CP949')
     return df
 
 
@@ -56,6 +57,7 @@ def write_csv(inid, df, ftype='data', site_dir=''):
     out_path = output_path(inid,  ftype=ftype, format='csv', site_dir=site_dir)
 
     try:
+       # df.to_csv(out_path, index=False)
         df.to_csv(out_path, index=False, encoding='utf-8-sig')
     except Exception as e:
         print(inid, e)
