@@ -6,6 +6,7 @@ import numpy as np
 import collections.abc
 from sdg.translations import TranslationHelper
 from sdg.Loggable import Loggable
+from functools import cached_property
 
 class Indicator(Loggable):
     """Data model for SDG indicators."""
