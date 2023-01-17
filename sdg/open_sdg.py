@@ -14,6 +14,7 @@ import inspect
 import importlib
 import sdg
 import yaml
+from functools import cached_property
 
 
 def open_sdg_config(config_file, defaults):
